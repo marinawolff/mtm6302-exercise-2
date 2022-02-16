@@ -20,10 +20,11 @@ const $image = document.getElementById('img-gallery')
 const html = []
 
 for (const image of images){
-    html.push(`<div><img src="images/${image.name}.jpg">
+    html.push(`<div class="image"><img src="images/${image.name}.jpg">
                 <h5> ${image.description} </h5></div>`)
 }
 
 $image.innerHTML = html.join('')
 
 //makes the images interactive
+
