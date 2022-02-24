@@ -40,3 +40,23 @@ img{
     flex-wrap: wrap;
     justify-content: center;
 }
+
+/* .text{
+    width: 350px;
+    height: 350px;
+    margin: 6px;
+    border: 1px solid gray;
+    background-color: black;
+    
+}
+
+.text p{
+    color: white;
+    display: block;
+    text-align: center;
+    margin-top:50%;
+} */
+
+.text{
+    font-size: 42px;
+}

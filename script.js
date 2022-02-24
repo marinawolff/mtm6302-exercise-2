@@ -1,18 +1,5 @@
-//Creates array and adds the images and description as a objects to the array
-const images = [
-    {name: 'image-1', description: 'Image 1'},
-    {name: 'image-2', description: 'Image 2'},
-    {name: 'image-3', description: 'Image 3'},
-    {name: 'image-4', description: 'Image 4'},
-    {name: 'image-5', description: 'Image 5'},
-    {name: 'image-6', description: 'Image 6'},
-    {name: 'image-7', description: 'Image 7'},
-    {name: 'image-8', description: 'Image 8'},
-    {name: 'image-9', description: 'Image 9'},
-    {name: 'image-10', description: 'Image 10'},
-    {name: 'image-11', description: 'Image 11'},
-    {name: 'image-12', description: 'Image 12'},
-]
+//Creates array and adds the images to the array
+const images = [ 'image-1', 'image-2', 'image-3', 'image-4', 'image-5', 'image-6', 'image-7', 'image-8', 'image-9', 'image-10', 'image-11', 'image-12'];
 
 //adds images dynamically to the gallery
 const $image = document.getElementById('img-gallery')
@@ -20,47 +7,48 @@ const $image = document.getElementById('img-gallery')
 const html = []
 
 for (const image of images){
-    html.push(`<div class="img"><img data-description="${image.description}" src="images/${image.name}.jpg">
-                <p>${image.description}</p></div>`)
+    html.push(`<div class="img" id="unique-image"><img src="images/${image}.jpg"></div>`)
 }
 
 $image.innerHTML = html.join('')
 
 //makes the images interactive
+//mouseover
+const hover = document.querySelectorAll('.img')
+
+
+for(let i = 0; i < images.length; i++) {
+    hover[i].addEventListener("mouseover", function(){
+        hover[i].style.opacity = 0.6;
+})};
+
+for(let i = 0; i < images.length; i++) {
+hover[i].addEventListener("mouseout", function() {
+    hover[i].style.opacity = 1.0;
+})};
+
+
 //click
 
-// const imgs = document.querySelectorAll('.img')
-
-// function imgClick(e){
-
-// }
-
-// img.addEventLiseter('click', imgClick))
-
-
-
-
-//makes the images interactive
-//click
-
-display = 'name'
+// -------------------------------------------------------------------------------------------------------------
+display = 'images'
 
 function switchDisplay(e){
-    const $allImages = document.querySelectorAll('.img')
-
+    
     console.log(e.target)
 
-    if(display === 'name'){
-        // for (const $image of $allImages) {
-            $image.innerHTML = ` <p>${e.target.dataset.description}</p>`
-        // }
-        display = 'description'
-    } else {
-        // for (const $image of $allImages) {
-            $image.innerHTML = `<img src="images/${$image.dataset.name}.jpg">`
-    // }
-    display = 'name'
-  }
+    if(display === 'images'){
+               $image.innerHTML = `<div class = "text"> <p> You clicked on the image!</p></div>`
+            //    <div class="img" id="unique-image"><img src="images/${$image}.jpg"></div>`
+
+       } else {
+               $image.innerHTML = `<img src="images/${$image}.jpg">`
+       display = 'images'
+     }
 }
 
 $image.addEventListener('click', switchDisplay)
+//------------------------------------------------------------------------------------------------------------------
+
+
+
