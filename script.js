@@ -21,7 +21,7 @@ const $image = document.getElementById('img-gallery')
 const html = []
 
 for (const image of images){
-    html.push(`<div class="img" id="unique-image"><img data-description="${image.description}" data-image="${image.name}" src="images/${image.name}.jpg"></div>`)
+    html.push(`<div class="img" id="unique-image"><img class="each-image" data-description="${image.description}" data-image="${image.name}" src="images/${image.name}.jpg"></div>`)
 }
 
 $image.innerHTML = html.join('')
@@ -30,7 +30,6 @@ $image.innerHTML = html.join('')
 
 //mouseover eventListener
 const hover = document.querySelectorAll('.img')
-
 
 for(let i = 0; i < images.length; i++) {
     hover[i].addEventListener("mouseover", function() {
@@ -53,7 +52,8 @@ function switchDisplay(e){
     console.log(e.target)
 
     if(display === 'name'){
-            if(e.target.classList.contains('img')){
+            // added if statment to select only images with the class "each-image" 
+            if(e.target.classList.contains('each-image')){
             $image.innerHTML = `<p class = "text"> You clicked on ${e.target.dataset.description}!</p>`
         }
 
@@ -61,25 +61,21 @@ function switchDisplay(e){
     } else {
            $image.innerHTML = html.join('')
             
+
            const hover = document.querySelectorAll('.img')
 
+            for(let i = 0; i < images.length; i++) {
+                hover[i].addEventListener("mouseover", function() {
+                    hover[i].style.opacity = 0.6;
+            })};
 
-        for(let i = 0; i < images.length; i++) {
-            hover[i].addEventListener("mouseover", function() {
-                hover[i].style.opacity = 0.6;
-        })};
-
-        for(let i = 0; i < images.length; i++) {
-        hover[i].addEventListener("mouseout", function() {
-            hover[i].style.opacity = 1.0;
-        })};
+            for(let i = 0; i < images.length; i++) {
+            hover[i].addEventListener("mouseout", function() {
+                hover[i].style.opacity = 1.0;
+            })};
 
     display = 'name'
     }
   }
 
   $image.addEventListener('click', switchDisplay)
-
-
-
-//<img data-description="${image.description}" src="images/${e.target.dataset.name}.jpg"></div>`
