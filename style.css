@@ -58,5 +58,7 @@ img{
 } */
 
 .text{
-    font-size: 42px;
+    font-size: 32px;
+    margin-top: 10%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
