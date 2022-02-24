@@ -30,25 +30,5 @@ hover[i].addEventListener("mouseout", function() {
 
 //click
 
-// -------------------------------------------------------------------------------------------------------------
-display = 'images'
-
-function switchDisplay(e){
-    
-    console.log(e.target)
-
-    if(display === 'images'){
-               $image.innerHTML = `<div class = "text"> <p> You clicked on the image!</p></div>`
-            //    <div class="img" id="unique-image"><img src="images/${$image}.jpg"></div>`
-
-       } else {
-               $image.innerHTML = `<img src="images/${$image}.jpg">`
-       display = 'images'
-     }
-}
-
-$image.addEventListener('click', switchDisplay)
-//------------------------------------------------------------------------------------------------------------------
-
-
+const modal = document.getElementById(img-gallery)
 
