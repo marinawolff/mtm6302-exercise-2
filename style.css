@@ -41,24 +41,13 @@ img{
     justify-content: center;
 }
 
-/* .text{
-    width: 350px;
-    height: 350px;
-    margin: 6px;
-    border: 1px solid gray;
-    background-color: black;
-    
-}
-
-.text p{
-    color: white;
-    display: block;
-    text-align: center;
-    margin-top:50%;
-} */
-
-.text{
+button{
     font-size: 32px;
     margin-top: 10%;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: rgb(221, 171, 105);
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 20px rgb(167, 166, 165, 0.7);
 }

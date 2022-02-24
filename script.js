@@ -26,6 +26,7 @@ for (const image of images){
 
 $image.innerHTML = html.join('')
 
+
 //makes the images interactive
 
 //mouseover eventListener
@@ -54,14 +55,14 @@ function switchDisplay(e){
     if(display === 'name'){
             // added if statment to select only images with the class "each-image" 
             if(e.target.classList.contains('each-image')){
-            $image.innerHTML = `<p class = "text"> You clicked on ${e.target.dataset.description}!</p>`
+            $image.innerHTML = `<button type="button' class="button"> You clicked on ${e.target.dataset.description}!</button>`
         }
 
         display = 'description'
     } else {
            $image.innerHTML = html.join('')
             
-
+           // Makes images opacity change after the event Listener "click" been activated. 
            const hover = document.querySelectorAll('.img')
 
             for(let i = 0; i < images.length; i++) {
