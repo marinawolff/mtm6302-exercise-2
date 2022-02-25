@@ -46,6 +46,7 @@ hover[i].addEventListener("mouseout", function() {
 //click eventListener 
 display = 'name'
 
+
 function switchDisplay(e){
     const $allImages = document.querySelectorAll('.img')
 
@@ -55,11 +56,12 @@ function switchDisplay(e){
     if(display === 'name'){
             // added if statment to select only images with the class "each-image" 
             if(e.target.classList.contains('each-image')){
-            $image.innerHTML = `<button type="button' class="button"> You clicked on ${e.target.dataset.description}!</button>`
+            $image.innerHTML =  `<button type="button" class="button" id="button"> You clicked on ${e.target.dataset.description}!</button>`
         }
 
         display = 'description'
     } else {
+           if(e.target.classList.contains('button')){
            $image.innerHTML = html.join('')
             
            // Makes images opacity change after the event Listener "click" been activated. 
@@ -75,7 +77,8 @@ function switchDisplay(e){
                 hover[i].style.opacity = 1.0;
             })};
 
-    display = 'name'
+            display = 'name'
+        }
     }
   }
 
